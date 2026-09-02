@@ -1,6 +1,5 @@
 import {defineConfig, devices} from '@playwright/test';
 import {config} from "dotenv";
-import {ENV} from "./project/config/env";
 
 /**
  * Read environment variables from file.
@@ -39,7 +38,10 @@ export default defineConfig({
     use: {
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on',
-
+        headless: false,
+        launchOptions: {
+            slowMo: 2000, // Delays every action (click, type, etc.) by 500ms
+        },
         /* Use options at here. See https://playwright.dev/docs/test-use-options */
     },
 
@@ -49,7 +51,7 @@ export default defineConfig({
             name: 'chromium',
             use: {
                 ...devices['Desktop Chrome'],
-                headless: false,
+                // headless: false,
                 screenshot: 'only-on-failure'
             },
         },

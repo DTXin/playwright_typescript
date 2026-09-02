@@ -3,7 +3,7 @@ import {ENV} from '../config/env';
 import {getRandomEmployeeDetails} from "../data/random";
 
 test('test', async ({page, loginPage, homePage, addEmployeePage}) => {
-    await page.goto(ENV.URL);
+    // await page.goto(ENV.URL);
     await loginPage.login(ENV.USERNAME, ENV.PASSWORD);
 
     await homePage.getLeftMenu.selectLeftMenuItem("PIM");

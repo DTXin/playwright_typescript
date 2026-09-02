@@ -2,7 +2,6 @@ import {test, expect} from "@playwright/test";
 import fs from 'fs';
 
 let URL = "https://the-internet.herokuapp.com/download";
-let FILE_NAME = "test-file.txt"
 
 
 test("Download a Single file and verifying Using Assertion", async ({page}) => {

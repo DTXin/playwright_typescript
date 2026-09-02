@@ -1,4 +1,4 @@
-import {test, expect} from "@playwright/test";
+import {test} from "@playwright/test";
 
 let URL = "https://the-internet.herokuapp.com/windows";
 

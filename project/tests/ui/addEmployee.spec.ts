@@ -1,6 +1,6 @@
-import {test, expect} from '../fixtures/pageFixtures'
-import {ENV} from '../config/env';
-import {getRandomEmployeeDetails} from "../data/random";
+import {test, expect} from '../../lib/fixtures/ui/pageFixtures'
+import {ENV} from '../../config/env';
+import {getRandomEmployeeDetails} from "../../resource/random";
 
 test('test', async ({loginPage, homePage, addEmployeePage}) => {
     await loginPage.login(ENV.USERNAME, ENV.PASSWORD);

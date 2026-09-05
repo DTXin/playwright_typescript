@@ -1,5 +1,5 @@
 import {Locator, Page} from "@playwright/test";
-import {EmployeeDetails} from "../../data/hrmInterface";
+import {EmployeeDetails} from "../../resource/hrmInterface";
 
 export class AddEmployeePage {
     // Constructor.

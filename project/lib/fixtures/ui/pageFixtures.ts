@@ -1,7 +1,7 @@
 import {test as base} from "@playwright/test"
-import {LoginPage} from "../pages/LoginPage";
-import {HomePage} from "../pages/HomePage";
-import {AddEmployeePage} from "../pages/PIM/AddEmployeePage";
+import {LoginPage} from "../../../pages/LoginPage";
+import {HomePage} from "../../../pages/HomePage";
+import {AddEmployeePage} from "../../../pages/PIM/AddEmployeePage";
 
 // Declaring the objects type for autocompletion.
 interface PageObject {

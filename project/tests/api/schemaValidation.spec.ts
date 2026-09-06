@@ -3,7 +3,7 @@ import Ajv from "ajv";
 import bookingSchema from '../../tests/api/schema/bookingSchema.json';
 
 test("Example schema validation.", async ({ request }) => {
-    const response = await request.get("/booking/11");
+    const response = await request.get("/booking/12");
     const responseBody = await response.json();
 
     const ajv = new Ajv();

@@ -1,0 +1,2 @@
+Upload fixture for the file upload test.
+Plain text, so the test covers a non-image extension.

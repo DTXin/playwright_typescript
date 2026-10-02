@@ -1,5 +1,5 @@
 import {test, expect} from "@playwright/test";
-import {getToken, createHeader} from "../../lib/fixtures/api/authenFixture"
+import {getToken, createHeader} from "../../src/fixtures/api/authenFixture";
 
 test.describe("booking/ DELETE requests", async () => {
     let token: string;

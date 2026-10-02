@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test";
 import Ajv from "ajv";
-import bookingSchema from '../../tests/api/schema/bookingSchema.json';
+import bookingSchema from './schema/bookingSchema.json';
 
 test("Example schema validation.", async ({ request }) => {
     const response = await request.get("/booking/11");

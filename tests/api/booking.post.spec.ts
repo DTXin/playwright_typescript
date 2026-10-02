@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test";
-import {createRandomBookingBody} from "../../lib/data/api/booking"
-import {getFutureDate, getToday} from "../../lib/helpers/dateHelper"
+import {createRandomBookingBody} from "../../src/data/api/booking"
+import {getFutureDate, getToday} from "../../src/helpers/dateHelper"
 
 test.describe("booking/ POST requests", async () => {
     let requestBody: { firstname: string;

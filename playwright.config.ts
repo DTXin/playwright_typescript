@@ -9,35 +9,31 @@ import {config} from "dotenv";
 // ENVIRONMENT = qa      ==> reading file '.env.ts.qa'
 if (process.env.ENVIRONMENT) {
     config({
-        path: `./project/env/.env.${process.env.ENVIRONMENT}`,
+        path: `./env/.env.${process.env.ENVIRONMENT}`,
         override: true
     });
 } else {
-    config();
+    config({
+        path: `./env/.env`,
+        override: true
+    });
 }
-
-
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-    /* Look for test files in the "tests" directory, relative to this configuration file. */
-    testDir: './project/tests',
-    /* Run tests in files in parallel */
+    testDir: './tests',
     fullyParallel: true,
-    /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
-    /* Retry on CI only */
     retries: process.env.CI ? 1 : 0,
-    /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
-    /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    reporter: 'html',
-    /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+    reporter: [
+        ['html'],
+        ['allure-playwright'],
+    ],
     use: {
         baseURL: "https://restful-booker.herokuapp.com/",
-        /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on',
         headless: false,
         launchOptions: {
@@ -46,7 +42,6 @@ export default defineConfig({
         /* Use options at here. See https://playwright.dev/docs/test-use-options */
     },
 
-    /* Configure projects for major browsers */
     projects: [
         {
             name: 'chromium',

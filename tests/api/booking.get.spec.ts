@@ -1,5 +1,5 @@
 import {test, expect} from "@playwright/test";
-import {isValidDate} from "../../lib/helpers/dateHelper";
+import {isValidDate} from "../../src/helpers/dateHelper";
 
 test.describe("booking/ GET requests", async () => {
     test("Get all booking results", async ({request}) => {
